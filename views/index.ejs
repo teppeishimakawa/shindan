@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+  <body>
+    <h3 style="text-align:center;"><%= title %></h3>
+    <p style="text-align:center;"><%= title %>とは?</p>
+
+<br>
+<br>
+<br>
+
+<p>
+簡易抑うつ症状尺度(QIDS -J)とは
+</p>
+
+
+<p>
+簡易抑うつ症状尺度(Quick Inventory of Depressive Symptomatology:QIDS -J)は、16 項目の自
+己記入式の評価尺度で、うつ病の重症度を評価できるほか、アメリカ精神医学会の診断基準 DSM-IV の 大うつ病性障害(中核的なうつ病)の診断基準に対応しているという特長を持っています。世界的に知 られた精神科医 John Rush 先生によって開発され、世界 10 カ国以上で使用されています。日本語版は、 慶応大学医学部の藤澤大介先生のグループによって作成されました。
+</p>
+
+<br>
+
+<p>
+採点の方法
+</p>
+<p>
+睡眠に関する項目(第1-4項目)、食欲/体重に関する項目(第6-9項目)、精神運動状態に関す
+る2項目(第15、16項目)は、それぞれの項目で最も点数が高いものを1つだけ選んで点数化しま す。それ以外の項目(第5、10，11，12，13，14項目)は、それぞれの点数を書き出します。 うつ病の重症度は、睡眠、食欲/体重、精神運動、その他 6 項目、合わせて 9 項目の合計点数(0点か ら27点)で評価します。原版 QIDS では、点数と重症度は下記のようになっています。
+</p>
+<br>
+
+
+
+<!--table-->
+<br>
+<h3 style="text-align:center; color:red" ><%= score %></h3>
+<br>
+<table class="table table-striped table-bordered">
+ <tr>
+  <td>0-5</td>
+  <td>正常</td>
+ </tr>
+ <tr>
+  <td>6-10</td>
+  <td>軽度</td>
+ </tr>
+ <tr>
+  <td>11-15</td>
+  <td>中等度</td>
+ </tr>
+ <tr>
+  <td>16-20</td>
+  <td>重度</td>
+ </tr>
+ <tr>
+  <td>21-27</td>
+  <td>きわめて重度</td>
+ </tr>
+</table>
+
+<br>
+<br>
+<p>
+QIDS-Jの使い方
+</p>
+<p>
+各項目が大うつ病性障害の症状に対応しているので、うつ症状の評価やスクリーニングに使えるほか、
+合計点を算出することでうつ状態の変化を見ることができます。6 点以上の場合にはうつ病の可能性があ りますので、まず医療機関に相談してください。
+</p>
+
+<br>
+<br>
+<br>
+
+<p style="text-align: center">
+日本語版自己記入式・簡易抑うつ症状尺度
+</p>
+<p style="text-align: center">
+(Quick Inventory of Depressive Symptomatology:QIDS -J)
+</p>
+
+<br>
+
+<form class="needs-validation" novalidate method="post" action="/">
+ <div class="form-group">
+
+
+  <!--segmentについて-->
+ <div class="container">
+ <div class="row">
+
+
+ <div class="col-lg-6 pt-4 pb-4 pl-4 mt-1 mb-1 text-left" ><!--style="background-color:skyblue;"-->
+    <label for="optionA">1.寝つき</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A1" value="0" required>
+      <label class="form-check-label" for="optionA">0.問題ない(または、寝付くのに30分以上かかったことは一度もない)</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A1" value="1" required>
+      <label class="form-check-label" for="optionA">1.寝つくのに30分以上かかったこともあるが、一週間の半分以下である</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A1" value="2" required>
+      <label class="form-check-label" for="optionA">2.寝つくのに30分以上かかったことが、週の半分以上ある</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A1"   value="3" required>
+      <label class="form-check-label" for="optionA">3.寝つくのに60分以上かかったことが、(1週間の)半分以上ある</label>
+
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">2.夜間の睡眠</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A2"   value="0" required>
+      <label class="form-check-label" for="optionA">0.問題ない(夜間に目が覚めたことはない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A2"   value="1" required>
+      <label class="form-check-label" for="optionA">1.落ち着かない、浅い眠りで、何回か短く目が覚めたことがある</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A2"   value="2" required>
+      <label class="form-check-label" for="optionA">2.毎晩少なくとも1回は目が覚めるが、難なくまた眠ることができる</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A2"   value="3" required>
+      <label class="form-check-label" for="optionA">3.毎晩1回以上目が覚め、そのまま20分以上眠れないことが、(1週間の)半分以上ある</label>
+
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">3.早く目が覚めすぎる</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A3"   value="0" required>
+      <label class="form-check-label" for="optionA">0.問題ない(または、ほとんどの場合、目が覚めるのは、起きなくてはいけない時間の、せいぜい30分前である)</label>
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A3"   value="1" required>
+      <label class="form-check-label" for="optionA">1.週の半分以上、起きなくてはならない時間より30分以上早く目が覚める</label>
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A3"   value="2" required>
+      <label class="form-check-label" for="optionA">2.ほとんどいつも、起きなくてはならない時間より1時間早く目が覚めてしまうが、最終的にはまた眠ることができる。</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A3"   value="3" required>
+      <label class="form-check-label" for="optionA">3.起きなくてはならない時間よりも1時間以上早く起きてしまい、もう一度眠ることができない</label>
+
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">4.眠りすぎる</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A4"   value="0" required>
+      <label class="form-check-label" for="optionA">0.問題ない(夜間、眠りすぎることはなく、日中に昼寝をすることもない)</label>
+
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A4"   value="1" required>
+      <label class="form-check-label" for="optionA">1.24時間のうち、眠っている時間は、昼寝を含めて10時間ほどである</label>
+
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A4"   value="2" required>
+      <label class="form-check-label" for="optionA">2.24時間のうち、眠っている時間は、昼寝を含めて12時間ほどである</label>
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A4"   value="3" required>
+      <label class="form-check-label" for="optionA">3.24時間のうち、昼寝を含めて12時間以上眠っている</label>
+
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+        <label for="optionA">5.悲しい気持ち</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A5"   value="0" required>
+      <label class="form-check-label" for="optionA">0.悲しいとは思わない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A5"   value="1" required>
+      <label class="form-check-label" for="optionA">1.悲しいと思うことは、半分以下の時間である</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A5"   value="2" required>
+      <label class="form-check-label" for="optionA">2.悲しいと思うことが半分以上の時間ある</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A5"   value="3" required>
+      <label class="form-check-label" for="optionA">3.ほとんどすべての時間、悲しいと感じている</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">6.食欲低下</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A6"   value="0" required>
+      <label class="form-check-label" for="optionA">0.普段の食欲とかわらない、または、食欲が増えた</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A6"   value="1" required>
+      <label class="form-check-label" for="optionA">1.普段よりいくぶん食べる回数が少ないか、量が少ない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A6"   value="2" required>
+      <label class="form-check-label" for="optionA">2.普段よりかなり食べる量が少なく、食べるよう努めないといけない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A6"   value="3" required>
+      <label class="form-check-label" for="optionA">3.まる1日(24時間)ほとんどものを食べず、食べるのは極めて強く食べようと努めたり、誰かに食べるよう説得さ れたときだけである</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">7.食欲増進</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A7"   value="0" required>
+      <label class="form-check-label" for="optionA">0.普段の食欲とかわらない、または、食欲が減った</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A7"   value="1" required>
+      <label class="form-check-label" for="optionA">1.普段より頻回に食べないといけないように感じる</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A7"   value="2" required>
+      <label class="form-check-label" for="optionA">2.普段とくらべて、常に食べる回数が多かったり、量が多かったりする</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A7"   value="3" required>
+      <label class="form-check-label" for="optionA">3.食事の時も、食事と食事の間も、食べ過ぎる衝動にかられている</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">8.体重減少(最近2週間で)</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A8"   value="0" required>
+      <label class="form-check-label" for="optionA">0.体重は変わっていない、または、体重は増えた</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A8"   value="1" required>
+      <label class="form-check-label" for="optionA">1.少し体重が減った気がする</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A8"   value="2" required>
+      <label class="form-check-label" for="optionA">2.1キロ以上やせた</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A8"   value="3" required>
+      <label class="form-check-label" for="optionA">3.2キロ以上やせた</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+
+</div>
+<!--paragraph1のdiv-->
+
+
+
+
+<div class="col-lg-6 pt-4 pb-4 mt-1 mb-1 pl-4 text-left" ><!--style="background-color:pink;"-->
+
+
+    <label for="optionA">9.体重増加(最近2週間で)</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A9"   value="0" required>
+      <label class="form-check-label" for="optionA">0.体重は変わっていない、または、体重は減った</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A9"   value="1" required>
+      <label class="form-check-label" for="optionA">1.少し体重が増えた気がする</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A9"   value="2" required>
+      <label class="form-check-label" for="optionA">2.1キロ以上太った</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A9"   value="3" required>
+      <label class="form-check-label" for="optionA">3.2キロ以上太った</label>
+
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">10.集中力/決断</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A10"   value="0" required>
+      <label class="form-check-label" for="optionA">0.集中力や決断力は普段とかわりない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A10"   value="1" required>
+      <label class="form-check-label" for="optionA">1.ときどき決断しづらくなっているように感じたり、注意が散漫になるように感じる</label>
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A10"   value="2" required>
+      <label class="form-check-label" for="optionA">2.ほとんどの時間、注意を集中したり、決断を下すのに苦労する</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A10"   value="3" required>
+      <label class="form-check-label" for="optionA">3.ものを読むこともじゅうぶんにできなかったり、小さなことですら決断できないほど集中力が落ちている</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">11.自分についての見方</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A11"   value="0" required>
+      <label class="form-check-label" for="optionA">0.自分のことを、他の人と同じくらい価値があって、援助に値する人間だと思う</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A11"   value="1" required>
+      <label class="form-check-label" for="optionA">1.普段よりも自分を責めがちである</label>
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A11"   value="2" required>
+      <label class="form-check-label" for="optionA">2.自分が他の人に迷惑をかけているとかなり信じている</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A11"   value="3" required>
+      <label class="form-check-label" for="optionA">3.自分の大小の欠陥について、ほとんど常に考えている</label>
+
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">12.死や自殺についての考え</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A12"   value="0" required>
+      <label class="form-check-label" for="optionA">0.死や自殺について考えることはない</label>
+
+
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A12"   value="1" required>
+      <label class="form-check-label" for="optionA">1.人生が空っぽに感じ、生きている価値があるかどうか疑問に思う</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A12"   value="2" required>
+      <label class="form-check-label" for="optionA">2.自殺や死について、1週間に数回、数分間にわたって考えることがある</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A12"   value="3" required>
+      <label class="form-check-label" for="optionA">3.自殺や死について1日に何回か細部にわたって考える、または、具体的な自殺の計画を立てたり、実際に死のうとし たりしたことがあった</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+        <label for="optionA">13.一般的な興味</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A13"   value="0" required>
+      <label class="form-check-label" for="optionA">0.他人のことやいろいろな活動についての興味は普段と変わ らない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A13"   value="1" required>
+      <label class="form-check-label" for="optionA">1.人々や活動について、普段より興味が薄れていると感じる</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A13"   value="2" required>
+      <label class="form-check-label" for="optionA">2.以前好んでいた活動のうち、一つか二つのことにしか興味がなくなっていると感じる</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A13"   value="3" required>
+      <label class="form-check-label" for="optionA">3.以前好んでいた活動に、ほとんどまったく興味がなくなっている</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">14.エネルギーのレベル</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A14"   value="0" required>
+      <label class="form-check-label" for="optionA">0.普段のエネルギーのレベルと変わりない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A14"   value="1" required>
+      <label class="form-check-label" for="optionA">1.普段よりも疲れやすい</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A14"   value="2" required>
+      <label class="form-check-label" for="optionA">2.普段の日常の活動(例えば、買い物、宿題、料理、出勤など)をやり始めたり、やりとげるのに、大きな努力が必要である</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A14"   value="3" required>
+      <label class="form-check-label" for="optionA">3.ただエネルギーがないという理由だけで、日常の活動のほとんどが実行できない</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">15.動きが遅くなった気がする</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A15"   value="0" required>
+      <label class="form-check-label" for="optionA">0.普段どおりの速さで考えたり、話したり、動いたりしてい る</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A15"   value="1" required>
+      <label class="form-check-label" for="optionA">1.頭の働きが遅くなっていたり、声が単調で平坦に感じる</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A15"   value="2" required>
+      <label class="form-check-label" for="optionA">2.ほとんどの質問に答えるのに何秒かかかり、考えが遅くなっているのがわかる</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A15"   value="3" required>
+      <label class="form-check-label" for="optionA">3.最大の努力をしないと、質問に答えられないことがしばしばである</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+<br>
+<br>
+
+    <label for="optionA">16.落ち着かない</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A16"   value="0" required>
+      <label class="form-check-label" for="optionA">0.落ち着かない気持ちはない。</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A16"   value="1" required>
+      <label class="form-check-label" for="optionA">1.しばしばそわそわしていて、手をもんだり、座り直したりせずにはいられない</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A16"   value="2" required>
+      <label class="form-check-label" for="optionA">2.動き回りたい衝動があって、かなり落ち着かない。</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="A16"   value="3" required>
+      <label class="form-check-label" for="optionA">3.ときどき、座っていられなくて歩き回らずにはいられないことがある</label>
+      <div class="invalid-feedback">You need to select any</div>
+    </div>
+
+
+
+</div>
+<!--paragraph2のdiv-->
+
+
+
+
+
+
+
+<!--rowのdiv-->
+</div>
+
+
+<div class="row center-block text-center mt-4 mb-4">
+  <div class="col-4"></div>
+  <div class="col-4">
+   <button type="submit" class="btn btn-success btn-block">submit</button>
+  </div>
+  <div class="col-4"></div>
+</div>
+
+
+<!--containerのdiv-->
+</div>
+
+
+</div>
+</form>
+
+
+<script>
+// 無効なフィールドがある場合にフォーム送信を無効にするスターターJavaScriptの例
+(function() {
+  'use strict';
+
+  window.addEventListener('load', function() {
+    // カスタムブートストラップ検証スタイルを適用するすべてのフォームを取得
+    var forms = document.getElementsByClassName('needs-validation');
+    // ループして帰順を防ぐ
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) 
+        {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+<!--div class="container">で囲む
+上記のcontainerクラスの中で<div class="row">で一行を定義する
+上記のrowクラスの中で<div class="col-{prefix}-{列数(1〜12)}">で何分割するかを定義する-->
+
+
+
+
+
+
+<footer style="background-color:gray; text-align:center;">Footer</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script>
+
+    </script>
+  </body>
+</html>
